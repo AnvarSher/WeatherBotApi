@@ -77,12 +77,14 @@ def getOrCreateClient(userid, message):
 		return clients[0]
 	else:
 		tUser = message['from']
-		client = Client.objects.create(
-			userid = userid,
-			name = tUser['username'],
-			firstname = tUser['first_name'],
-			lastname = tUser['last_name']
-		)
+		client = Client()
+		client.userid = userid
+		client.name = tUser['username']
+		if('first_name' in tUser):
+			client.firstname = tUser['first_name']
+		if('last_name' in tUser):
+			client.lastname = tUser['last_name']
+		client.save()
 		return client
 
 
