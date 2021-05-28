@@ -7,12 +7,19 @@ class Client(models.Model):
 	firstname = models.CharField(max_length=100)
 	lastname = models.CharField(max_length=100)
 
+	def __str__(self):
+		return self.name
+
+
 class Weather(models.Model):
 	name = models.CharField(max_length=100)
 	description = models.CharField(max_length=500)
 	longitude = models.FloatField()
 	latitude = models.FloatField()
 	date = models.DateTimeField(default=now, editable=False)
+
+	def __str__(self):
+		return self.name
 
 class ClientRequest(models.Model):
 	name = models.CharField(max_length=100)
@@ -24,3 +31,6 @@ class ClientRequest(models.Model):
 	weather = models.OneToOneField(Weather, null=True, on_delete=models.CASCADE)
 	error = models.CharField(max_length=500)
 	date = models.DateTimeField(default=now, editable=False)
+
+	def __str__(self):
+		return self.name
