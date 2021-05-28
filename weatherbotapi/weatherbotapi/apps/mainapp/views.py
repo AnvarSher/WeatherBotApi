@@ -42,7 +42,7 @@ def handleMessage(chat_id, message):
 	req.client = client
 
 	if(isMessage and message['text'] == '/start'):
-		return bot.sendMessage(chat_id, "Welcome!")
+		return bot.sendMessage(chat_id, "Welcome!\nWhere do you want to know the weather?")
 
 	if(not isMessage and not isLocation):
 		return bot.sendMessage(chat_id, "Unsupported message!")
