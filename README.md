@@ -32,7 +32,14 @@ $ cd WeatherBotApi/
 "source env/bin/activate" (Linux/MacOS)  либо "env\Scripts\activate" (Windows)
 ```
 
-### Шаг 3. Запустите контейнеры
+### Шаг 3. Укажите переменные среды
+
+Проставьте значение настройки BOT_TOKEN=(Token) в файле botenv.dev.
+
+> Можете использовать уже указанный BOT_TOKEN. (Имя бота - @MyWeatherIsBot)
+
+
+### Шаг 4. Запустите контейнеры
 
 > При необходимости изменить порт web приложения в файле docker-compose.yaml. По умолчанию установлен порт 8000.
 
@@ -42,19 +49,12 @@ $ cd WeatherBotApi/
 $ (env) docker-compose up -d --build
 ```
 
-### Шаг 4. Подвяжите webhook бота
+### Шаг 5. Подвяжите webhook бота
 
 Выполните GET запрос по адресу: 
 ```
 https://api.telegram.org/bot(Token)/setWebhook?url=https://(Domen or IP-address)/api/bot/.
 ```
-
-### Шаг 5. Укажите переменные среды
-
-Проставьте значение настройки BOT_TOKEN=(Token) в файле botenv.dev.
-
-> Можете использовать уже указанный BOT_TOKEN. (Имя бота - @MyWeatherIsBot)
-
 
 #### Бот готов к использованию!
 
