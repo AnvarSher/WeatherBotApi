@@ -20,6 +20,7 @@ $ git clone https://github.com/AnvarSher/WeatherBotApi.git
 > При необходимости изменить порт web приложения в файле docker-compose.yaml. По умолчанию установлен порт 8000.
 
 ```
+$ cd WeatherBotApi/
 $ docker-compose up -d --build
 ```
 
