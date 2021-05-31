@@ -17,16 +17,24 @@ $ git clone https://github.com/AnvarSher/WeatherBotApi.git
 
 ### Шаг 2. Запустите контейнеры
 
-> При необходимости изменить порт web приложения в файле docker-compose.yaml. По умолчанию установлен порт 8000.
-
+Перейдите в корневую директорию проекта:
 ```
 $ cd WeatherBotApi/
 ```
-> Создайте и активируйте виртуальную среду с помощью команды: 
-> "python3 -m venv env" (Windows/Linux) либо "virtualenv -p python3 env" (MacOS)
 
-> Затем:
-> "source env/bin/activate" (Linux/MacOS)  либо "env\Scripts\activate" (Windows)
+Создайте виртуальную среду с помощью команды: 
+```
+"python3 -m venv env" (Windows/Linux) либо "virtualenv -p python3 env" (MacOS)
+```
+
+Затем активируйте eё:
+```
+"source env/bin/activate" (Linux/MacOS)  либо "env\Scripts\activate" (Windows)
+```
+
+> При необходимости изменить порт web приложения в файле docker-compose.yaml. По умолчанию установлен порт 8000.
+
+Запустите контейнеры:
 
 ```
 $ (env) docker-compose up -d --build
