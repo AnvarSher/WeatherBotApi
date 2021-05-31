@@ -8,10 +8,25 @@
 
 Сервис реализован с использованием django rest framework.
 
-## API
+## Установка и настройка
 
-Основной API можно найти по адресу /api.
-API для webhook для telegram bot-а - по адресу /api/bot.
+### Шаг 1. Клонируйте репозиторий
+```
+$ git clone https://github.com/AnvarSher/WeatherBotApi.git
+```
+
+### Шаг 2. Запустите контейнеры
+
+> При необходимости изменить порт web приложения в файле docker-compose.yaml. По умолчанию установлен порт 8000.
+
+```
+$ docker-compose up -d --build
+```
+
+### Шаг 3. Подвяжите webhook бота
+
+Выполните GET запрос по адресу: https://api.telegram.org/bot<Token>/setWebhook?url=https://<Domen or IP-address>/api/bot/.
+Затем попробуйте написать боту сообщение или отправить ему локацию.
 
 ## Настройки
 
