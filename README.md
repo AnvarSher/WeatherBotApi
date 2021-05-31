@@ -21,7 +21,14 @@ $ git clone https://github.com/AnvarSher/WeatherBotApi.git
 
 ```
 $ cd WeatherBotApi/
-$ docker-compose up -d --build
+```
+> Создайте и активируйте виртуальную среду с помощью команды: 
+> "python3 -m venv env" (Windows/Linux) либо "virtualenv -p python3 env" (MacOS)
+> Затем:
+> "source env/bin/activate" (Linux/MacOS)  либо "env\Scripts\activate" (Windows)
+
+```
+$ (env) docker-compose up -d --build
 ```
 
 ### Шаг 3. Подвяжите webhook бота
