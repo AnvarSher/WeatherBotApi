@@ -7,7 +7,7 @@ class WeatherApi:
 		self.latitude = latitude
 		self.longitude = longitude
 		self.placeName = ''
-		self.weather = ''
+		self.result = ''
 		self.success = False
 
 	def get(self):
@@ -15,7 +15,7 @@ class WeatherApi:
 			response = requestOpenWeather(self.latitude, self.longitude)
 			if(self.validateWeather(response)):
 				self.writeFormatedText(response)
-		return self.weather
+		return self.result
 
 	def getByCoordinates(self, longitude, latitude):
 		self.coordinatesIndivated = True
@@ -29,7 +29,7 @@ class WeatherApi:
 
 	def validateCoordinates(self):
 		if(not self.coordinatesIndivated):
-			self.weather = "Error: Coordinates not indicated!"
+			self.result = "Error: Coordinates not indicated!"
 			self.success = False
 			return False
 		return True
@@ -37,7 +37,7 @@ class WeatherApi:
 	def validateWeather(self, data):
 		if(data['cod'] != 200):
 			self.success = False
-			self.weather = "Error: Wrong coordinates!"
+			self.result = "Error: Wrong coordinates!"
 			return False;
 		return True;
 
@@ -45,6 +45,6 @@ class WeatherApi:
 		placeName = data['name']
 		temp = round(data['main']['temp'] - 273.15)
 		description = data['weather'][0]['description']
-		self.weather = 'Weather in {0}:\n{1}°C & {2}'.format(placeName, temp, description)
+		self.result = 'Weather in {0}:\n{1}°C & {2}'.format(placeName, temp, description)
 		self.success = True
 		self.placeName = placeName

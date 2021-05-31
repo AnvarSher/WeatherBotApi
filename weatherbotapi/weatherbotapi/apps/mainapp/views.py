@@ -18,7 +18,7 @@ from .serializers import ClientSerializer, WeatherSerializer, ClientRequestSeria
 @parser_classes([JSONParser])
 def bot(request, format=None):
 	bot = Bot()
-	message = request.data['message'];
+	message = request.data['message']
 	chat_id = message['chat']['id']
 
 	try:
@@ -49,26 +49,26 @@ def handleMessage(chat_id, message):
 
 	if(isMessage):
 		req.text = message['text']
-		resultMessage = weatherApi.getByPlaceName(req.text)
+		weatherApi.getByPlaceName(req.text)
 	else:
 		req.longitude = message['location']['longitude']
 		req.latitude = message['location']['latitude']
-		resultMessage = weatherApi.getByCoordinates(req.longitude, req.latitude)
+		weatherApi.getByCoordinates(req.longitude, req.latitude)
 
 	req.success = weatherApi.success
 
 	if(weatherApi.success):
 		req.weather = Weather.objects.create(
 			name = weatherApi.placeName,
-			description = weatherApi.weather,
+			description = weatherApi.result,
 			longitude = weatherApi.longitude,
 			latitude = weatherApi.latitude
 		)
 	else:
-		req.error = weatherApi.weather
+		req.error = weatherApi.result
 
 	req.save()
-	bot.sendMessage(chat_id, resultMessage)
+	bot.sendMessage(chat_id, weatherApi.result)
 
 
 def getOrCreateClient(userid, message):
