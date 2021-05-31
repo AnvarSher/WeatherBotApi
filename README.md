@@ -25,7 +25,7 @@ $ docker-compose up -d --build
 
 ### Шаг 3. Подвяжите webhook бота
 
-Выполните GET запрос по адресу: https://api.telegram.org/bot<Token>/setWebhook?url=https://<Domen or IP-address>/api/bot/.
+Выполните GET запрос по адресу: https://api.telegram.org/bot(Token)/setWebhook?url=https://(Domen or IP-address)/api/bot/.
 Затем попробуйте написать боту сообщение или отправить ему локацию.
 
 ## Настройки
