@@ -1,6 +1,6 @@
 FROM python:3.8.3-alpine
 
-WORKDIR /usr/src/weather-bot-proj/weatherbotapi
+WORKDIR /usr/src/weatherbot
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -13,4 +13,4 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["/usr/src/weather-bot-proj/weatherbotapi/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/weatherbot/entrypoint.sh"]

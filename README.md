@@ -53,7 +53,7 @@ $ (env) docker-compose up -d --build
 
 Выполните GET запрос по адресу: 
 ```
-https://api.telegram.org/bot(Token)/setWebhook?url=https://(Domen or IP-address)/api/bot/.
+https://api.telegram.org/bot(Token)/setWebhook?url=https://(Domen or IP-address)/api/bot/
 ```
 
 #### Бот готов к использованию!

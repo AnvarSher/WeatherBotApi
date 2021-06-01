@@ -21,6 +21,7 @@ class Weather(models.Model):
 	def __str__(self):
 		return self.name
 
+
 class ClientRequest(models.Model):
 	name = models.CharField(max_length=100)
 	text = models.CharField(max_length=100)

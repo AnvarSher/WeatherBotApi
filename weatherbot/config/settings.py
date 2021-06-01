@@ -1,10 +1,10 @@
 import os, sys
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -13,9 +13,8 @@ DEBUG = int(os.environ.get("DEBUG", default=0))
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
-
 INSTALLED_APPS = [
-    'mainapp.apps.MainappConfig',
+    'weatherbotapi.apps.WeatherBotApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'weatherbotapi.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -64,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'weatherbotapi.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 

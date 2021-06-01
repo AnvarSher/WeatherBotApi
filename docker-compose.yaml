@@ -3,10 +3,10 @@ version: '3.8'
 
 services:
   web:
-    build: ./weatherbotapi
+    build: ./weatherbot
     command: python manage.py runserver 0.0.0.0:8000
     volumes: 
-      - ./weatherbotapi/:/usr/src/weather-bot-proj/weatherbotapi
+      - ./weatherbot/:/usr/src/weatherbot
     ports:
       - 8000:8000
     env_file:
