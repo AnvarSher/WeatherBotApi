@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 
+
 class Client(models.Model):
 	name = models.CharField(max_length=100)
 	userid = models.CharField(max_length=10)

@@ -12,14 +12,14 @@
 
 ### Шаг 1. Клонируйте репозиторий
 ```
-$ git clone https://github.com/AnvarSher/WeatherBotApi.git
+git clone https://github.com/AnvarSher/WeatherBotApi.git
 ```
 
 ### Шаг 2. Активируйте виртуальную среду
 
 Перейдите в корневую директорию проекта:
 ```
-$ cd WeatherBotApi/
+cd WeatherBotApi/
 ```
 
 Создайте виртуальную среду с помощью команды: 
@@ -46,7 +46,7 @@ $ cd WeatherBotApi/
 Запустите контейнеры:
 
 ```
-$ (env) docker-compose up -d --build
+(env) docker-compose up -d --build
 ```
 
 ### Шаг 5. Подвяжите webhook бота
@@ -62,6 +62,8 @@ https://api.telegram.org/bot(Token)/setWebhook?url=https://(Domen or IP-address)
 ## Данные
 
 Cхему данных можно подсмотреть в файле database-diagram.png. Тут всего три объекта.
+
+<img src="https://github.com/AnvarSher/WeatherBotApi/blob/main/database-diagram.png?raw=true" alt="database-diagram.png"/>
 
 Client - данные пользователя telegram, который обращается к боту.
 

@@ -9,15 +9,15 @@ from rest_framework.parsers import JSONParser
 from .models import Client, Weather, ClientRequest
 from .serializers import ClientSerializer, WeatherSerializer, ClientRequestSerializer
 
-from .botMessageService import BotMessageService
+from weatherbotapi.services.botMessageService import BotMessageService
 
 
 @csrf_exempt
 @api_view(['POST'])
 @parser_classes([JSONParser])
-def bot(request, format=None):
-	botMessageService = BotMessageService()
-	botMessageService.handleMessage(request.data)
+def bot(request):
+	bot_message_service = BotMessageService()
+	bot_message_service.handle_message(request.data)
 	return HttpResponse("Accepted")
 
 
